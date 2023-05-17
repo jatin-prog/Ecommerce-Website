@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+<p><center><h1 style="color: #AF0808; font-size:45px;font-weight:700;;">MR. SHOP</h1></center></p>
+
+
+{% for i in item %}
+<style>
+	.flex-container{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		
+	}
+    .productbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin-bottom:10px;
+	-webkit-box-shadow: 0 8px 6px -6px  #999;
+	   -moz-box-shadow: 0 8px 6px -6px  #999;
+	        box-shadow: 0 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+}
+
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+</style>
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<body style="background-image: image('file:///C:/Users/jatin/Desktop/MR.SHOP-1.JPG');">
+<div class="container">
+	<div clss="d-flex flex-column flex-md-row mt-4">
+		<div class="col-md-4 productbox">
+			<img src="{{i.img}}" class="img-responsive">
+			<div class="producttitle">{{i.name}}</div>
+			<div class="productprice"><div class="pull-right"><a href="http://localhost:8000/product?id={{i.id}}" role="button"> Details </a></div>
+		
+			<div class="pricetext"> RS-{{i.price}}</div>
+		</div>
+		</div>
+		
+		<div class="col-md-4 productbox">
+			<img src="{{i.img}}" class="img-responsive">
+			<div class="producttitle">{{i.name}}</div>
+			<div class="productprice"><div class="pull-right"><a href="http://localhost:8000/product?id={{i.id}}" role="button"> Details </a></div>
+		
+			<div class="pricetext"> RS-{{i.price}}</div>
+		</div>
+		</div>
+		<div class="col-md-4 productbox">
+			<img src="{{i.img}}" class="img-responsive">
+			<div class="producttitle">{{i.name}}</div>
+			<div class="productprice"><div class="pull-right"><a href="http://localhost:8000/product?id={{i.id}}" role="button"> Details </a></div>
+		
+			<div class="pricetext"> RS-{{i.price}}</div>
+		</div>
+		</div>
+	</div>
+
+</body>
+
+
+{% endfor %}
+
+{% endblock %}
